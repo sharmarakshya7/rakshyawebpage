@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakshya</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .modal {
+          display: block; /* Change to 'none' to hide the modal */
+          position: fixed;
+          z-index: 1000;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        }
+      
+        .modal-content {
+          background-color: #fff;
+          margin: 10% auto;
+          padding: 20px;
+          border-radius: 10px;
+          width: 400px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+      
+        .close {
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      
+        input, textarea {
+          width: 100%;
+          padding: 10px;
+          margin: 10px 0;
+          font-family: inherit;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+      
+        button {
+          width: 100%;
+          padding: 10px;
+          background-color: #9b4819;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      
+        button:hover {
+          background-color: #7a3614;
+        }
+        </style>
+</head>
+<body>
+  <header class = "header">  
+    <nav>
+            <div class="nav-container">
+                <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                 <a href="./index.html" class="logo"> <img src="../images/logo.png"  height="60"> </a>
+                </div>
+            <div class="links">
+                    <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="../index.html">Home</a></div>
+                    <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="../about/index.html">About</a></div>
+                    <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="../Background1/index.html">Background</a></div>
+                    <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="../research/index.html">Research</a></div>
+                    <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="../Projects/index.html">Projects</a></div>
+                    <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="../Contact me/index.html">Contact Me</a></div>
+            </div>
+                <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+            </div>
+            <div class="dropdown">
+                <div class="links">
+                    <a href="../index.html">Home</a>
+                    <a href="../about/index.html">About</a>
+                    <a href="../Background1/index.html">Background</a>
+                    <a href="../research/index.html">Research</a>
+                    <a href="../Projects/index.html">Projects</a>
+                    <a href="../Contact me/index.html">Contact Us</a>
+                    <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+                </div>
+            </div>
+</nav>
+</header>
+
+
+
+<div class="reach"> 
+    <div class="S2">
+      <div class="saying">
+        <p> Reach out if you want to create impactful visual art together </p>
+        <hr> 
+      </div>
+      <div class="socials">
+        <p> To see more of my work, visit my Socials</p> 
+
+        <div class="social-links2" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="500">
+          <a href="https://www.instagram.com/rakshya.sharma7/" ><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.instagram.com/rakshya.sharma7/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/rakshya-sharma/"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://x.com/RakshyaSharma8"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <div class="Contact"> 
+        <p> Phone: +9198xxxxxxxx </p>
+        <p></p> Email: sharmarakshya7@gmail.com</p> 
+      </div>
+    </div>
+  </div>
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeContactModal()">&times;</span>
+      <h2>Contact Me</h2>
+      <form onsubmit="sendEmail(event)">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+  </div>
+  
+
+
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({ offset: 0 });
+</script>
+
+<script src="../script.js"></script>
+
+<script>
+    function closeContactModal() {
+      document.getElementById("contactModal").style.display = "none";
+    }
+  
+    function sendEmail(event) {
+      event.preventDefault();
+      alert("Your message has been sent!");
+      // You can add your email-sending logic here
+    }
+  </script>
+
+</body>
+</html>
+
+
+</body>
+</html>

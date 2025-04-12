@@ -1,0 +1,835 @@
+* {
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+html{
+    overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  font-family: 'Times New Roman', Times, serif;
+  background: linear-gradient(to right, rgb(255, 255, 255), rgba(214, 149, 109, 0.634));
+}
+
+nav{
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+    
+}
+.nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo{
+    color: black;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+.logo span{
+    color: rgb(109,67, 0);
+    text-shadow: 0 0 10px rgb(155,72,25);
+}
+.hamburg, .cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: black;
+    font-size: 2rem;
+    display: none;
+}
+.nav-container .links {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+.nav-container .links a{
+    position: relative;
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s linear;
+    font-family: 'Times New Roman', Times, serif;
+}
+.nav-container .links a::before{
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: rgb(155,72,25);
+    transition: 0.2s linear;
+}
+.nav-container .links a:hover::before{
+    width: 100%;
+}
+.nav-container .contact-btn{
+    background-color: transparent;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid rgb(155,72,25);
+    transition: 0.2s linear;
+}
+.nav-container .contact-btn a{
+    color: rgb(0, 0, 0);
+    transition: 0.3s linear;
+}
+.nav-container .contact-btn:hover, .nav-container .contact-btn:hover a{
+ 
+    color: white;
+}
+.nav-container .links a:hover{
+    color: rgb(155,72,25)
+}
+.dropdown{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: brightness(40%) blur(3px);
+    box-shadow: 0 0 20px black;
+    transition: 0.2s linear;
+}
+.dropdown .links a{
+    color: white;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+.dropdown .links a:hover{
+    background-color: rgb(155,72,25);
+}
+
+#menu-icon {
+    font-size: 36px;
+    display: none;
+}
+
+.Home{
+height: auto;
+width: 100%;
+display: flex;
+align-items: flex-start;
+justify-content: center;
+box-sizing: border-box;
+}
+
+.main-container{
+  display: flex;
+  flex:1;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+  flex-wrap:wrap;
+  width: 100%;
+  height: 100%;
+  gap:2rem;
+  margin-top: 1rem;
+}
+
+  .hello h1 {
+    font-size: clamp(2rem, 4vw, 5rem);
+    text-align:center;
+    color:rgb(155,72,25);
+    position:relative; 
+    margin-top:  4rem;
+    font-family:'Times New Roman', Times, serif;
+  }
+
+  
+
+
+  .hello p{
+    text-align: center;
+    font-size:clamp(1rem, 5vw, 5rem);
+    margin: 50px;
+    font-family:'Times New Roman', Times, serif;
+  }
+
+
+  .creative{
+    color: rgb(155,72,25);
+    font-family:'Times New Roman', Times, serif;
+    font-style:italic;
+    font-weight: bold;
+    font-size: clamp(2.5rem, 5vw, 8rem);
+  }
+
+    
+    .Hello{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items:center;
+        justify-content: center;
+        flex:1 1 45%;
+        text-align: center;
+        font-style: italic;
+    }
+
+    
+
+ .image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1 1 45%;
+    object-fit:contain
+ }
+
+.image img {
+    width: 100%;
+    max-height: 800px;
+    max-width: 800px;
+    object-fit: contain;
+  }
+
+
+.social-links i{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(2.5rem, 2vw, 3rem);
+    height: clamp(2.5rem, 2vw, 3rem);
+    background-color:transparent;
+    color: rgb(155,72,25);
+    font-size:clamp(1.2rem, 4vw, 1.5rem);
+    margin: 5px clamp(0.5rem, 2vw, 1rem);
+    border: 0.2rem solid rgb(155,72,25);
+    border-radius: 50%;
+    transition: 0.2s linear;
+}
+.social-links i:hover{
+    scale: 1.3;
+    color: rgba(159, 70, 11, 0.767);
+}
+.buttons button {
+    margin-right: 1rem;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-size: clamp(0.8rem, 2vw, 2rem);
+    background-color: rgb(155,72,25);
+    border-color: rgb(253, 253, 253);
+    border-radius: 10px;
+    color: aliceblue;
+    transition: transform 0.3s ease;
+  }
+
+  /*Hire me button*/
+  /* Modal Background */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+/* Modal Box */
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+/* Close Button */
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+}
+
+/* Form Elements */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+button[type="submit"] {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+ 
+.About{
+    width: 100%;
+}
+  
+   .intro{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    flex-wrap:wrap;
+    width: 100%;
+    max-width: 1600px;
+    gap: 1.5rem;
+   
+   }
+
+  
+   .paragraph{
+    flex: 1 1 200px;
+    padding: 2rem;
+
+   }
+
+  .paragraph>h2{
+    color: rgb(155,72,25);
+    font-family:'Times New Roman', Times, serif;
+    font-size: clamp(2rem, 4vw, 4rem);
+    text-align: left;
+    margin-bottom: 1rem;
+    font-style: italic;
+    font-weight: bold;
+
+  }
+    .paragraph>p{
+      font-family: 'Times New Roman', Times, serif;
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      text-align: justify;
+      line-height: 1.5;
+    }
+  
+
+  .mypic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1 1 40%;
+    max-width: 45%;
+    padding:1rem;
+    background-color: aquamarine;
+}
+
+
+.intro> img {
+   width:100%;
+   height:auto;
+    max-height: 450px;
+    max-width: 300px;
+    border-top-left-radius: 37%;
+    border-top-right-radius: 37%;
+    object-fit:contain;
+}
+  
+ .background{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height:90vh;
+}
+
+.Background-heading > h1 {
+  font-size: clamp(2rem, 4vw, 5rem);
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(155, 72, 25);
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.background-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.back {
+  background-color: #fff;
+  width: 300px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.back:hover {
+  transform: translateY(-5px);
+}
+
+.backimg > img {
+  height: 100px;
+  object-fit: contain;
+}
+
+.uni h2 {
+  font-size: 1.2rem;
+  color: rgb(155, 72, 25);
+  margin-bottom: 0.5rem;
+}
+
+.unilist p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+  
+  .projects{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .projects h1 {
+    margin-bottom: 20px;
+    font-size: clamp(2rem, 4vw, 5rem);
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(155,72,25);
+    text-align: center;
+  }
+     
+  .card-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 1rem;
+  
+  }
+
+  .card {
+
+    flex: 1 1 250px;
+    max-width: 300px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit:contain;
+  }
+
+  .card a {
+    display: block;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+  }
+
+
+ /* Research */
+.research{
+  margin-bottom: 3rem;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+ .publications {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.heading h1 {
+  margin-bottom: 3rem;
+  font-size: clamp(2rem, 4vw, 5rem);
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(155,72,25);
+  text-align: center;
+}
+
+/* Card styling */
+.violence, .meat {
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Hover effect */
+.violence:hover,
+.meat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Image with fixed height and consistent aspect */
+.violence img,
+.meat img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 8px 8px 0 0;
+  padding-top: 10px;
+}
+
+
+.Topic {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+
+.Topic p {
+  color: rgb(155,72,25);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+}
+
+
+.Topic a {
+  color: #291dc7;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.Topic a:hover {
+  color: #ffc107;
+}
+
+  
+  .Topic {
+    background-color: aliceblue;
+    color: rgb(49, 64, 40);
+    margin-top: 15px;
+    max-height: 200px;
+    min-height: 100px;
+    padding: 10px; /* Ensures content does not touch edges */
+    display: flex;
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    text-align: center;
+  }
+
+  .reach {
+    background-color: rgb(155, 72, 25);
+    width: 100%;
+    color: aliceblue;
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping if needed */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+     /* Adds spacing */
+  }
+
+  .reach p {
+    font-size: clamp(1rem, 3vw, 4rem);
+  }
+  
+  
+  .S2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  
+  .saying {
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    text-align: center;
+    flex: 1 1;
+  }
+  
+  
+  .socials {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 2rem;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  
+  .Contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  
+  .social-links2 i{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color:white;
+    border-radius: 50%;
+    color: rgb(155,72,25);
+    margin: 5px 10px;
+    font-size: 1.5rem;
+    transition: 0.2s linear;
+}
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    #menu-icon {
+      display: block;}
+  
+    .nav-container .links{
+      display: none;
+    }
+
+
+    .hamburg {
+      display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.5rem 2rem;
+        border-bottom: 2px solid #000000;
+        display: none;
+      }
+    
+      .navbar.active {
+      display: flex;}
+    
+      .navbar a {
+      margin: 0.5rem 0;
+      }
+
+      .main-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin:0;
+        padding: 0;
+        height: auto;
+      }
+    
+      .Hello, .image {
+        flex: 1 1 100%;
+      }
+    
+      .buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+   
+
+    
+
+
+    /* Base styles */
+.background-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.back {
+  width: 300px;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background-color: white;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Image inside the card */
+.backimg img {
+  width: 60px;
+  height: auto;
+}
+
+/* Typography tweaks */
+.uni h2 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.unilist p {
+  font-size: 14px;
+}
+
+
+.card-container, .publications {
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  gap: 15px;
+}
+
+.card, .violence, .meat {
+  width: 90%;
+  max-width: 350px;
+}
+
+
+
+.Topic p {
+  font-size: 13px;
+}
+
+.projects h1, .heading h1 {
+  font-size: 24px;
+}
+
+.card a, .Topic a {
+  font-size: 15px;
+  padding: 8px;
+}
+}
+

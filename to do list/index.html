@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <link rel="stylesheet" href="./style.css">
+
+<style>
+
+body{
+    background-color: rgb(201, 201, 239);
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(201, 201, 239);
+    height: 100vh;
+    margin-top:4rem;
+}
+    h1{
+        font-size: clamp(1.5rem , 2vw, 4rem);
+        }
+    
+.enter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+    height: 45px;
+}
+
+.input{
+    width: 90%;
+    text-align: center;
+}
+
+
+    .output{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        text-align: center;
+        width: 70%;
+        background-color: aliceblue;
+        margin-top: 3rem;
+        border-radius: 5px 5px;
+      
+    }
+
+    .DONE{
+        height: 45PX;
+        width: 100px;
+        margin-left: 5px;
+        cursor: pointer;
+        background-color: rgb(255, 255, 255);
+        border:2px;
+        border-radius: 10px;
+    }
+
+    .DONE:hover{
+        transform: scale(1.1);
+    }
+
+    #display-task {
+  width: 100%; /* important: ensures child task rows stay within output */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+   
+
+.Tasks{
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(237, 201, 228);
+  padding: 10px;
+  
+}
+
+.completed{
+    background-color: rgb(198, 198, 250);
+    border-color: aliceblue;
+    border: shadow 5px;
+    border-radius: 5px;
+    margin-left: 4rem;
+}
+
+.clear-all {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #ff7f7f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.clear-all:hover {
+  background-color: #e74c3c;
+}
+
+
+</style>
+</head>
+
+<body>
+ <div class="main-container">  
+<h1> 🌸To do list 🌸</h1>
+
+<div class="enter"> <input class="input" type="text" placeholder="Enter your task" >  
+<div> <button class="DONE" onclick="Done()"> Add </button></div>
+</div> 
+
+
+<div class="output"> 
+    <h1>Your task to do</h1>
+  <div id="display-task"> </div>
+ 
+
+ 
+</div>
+   <button class="clear-all" onclick="clearAllTasks()">Clear All</button>
+
+<script>
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  
+    // Load tasks from localStorage when the page loads
+    window.onload = function () {
+      tasks.forEach(task => addTaskToDOM(task.text, task.completed));
+    };
+  
+    function Done() {
+      var input = document.querySelector(".input").value;
+  
+      if (input.trim() !== "") {
+        const task = { text: input, completed: false };
+        tasks.push(task);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+  
+        addTaskToDOM(task.text, task.completed);
+        document.querySelector(".input").value = "";
+      } else {
+        alert("Please enter your task before adding");
+      }
+    }
+  
+    function addTaskToDOM(text, completed) {
+      var newTask = document.createElement("li");
+      newTask.classList.add("Tasks");
+  
+      // Make task text editable when double-clicked
+      var taskText = document.createElement("span");
+      taskText.textContent = text;
+      taskText.contentEditable = true;
+      taskText.style.outline = "none";
+      taskText.style.flexGrow = "1";
+  
+      // ✔️ Complete button
+      var completeBtn = document.createElement("button");
+      completeBtn.textContent = "✔️";
+      completeBtn.classList.add("completed");
+  
+      if (completed) {
+        taskText.style.textDecoration = "line-through";
+      }
+  
+      completeBtn.onclick = function () {
+        if (taskText.style.textDecoration === "line-through") {
+          taskText.style.textDecoration = "none";
+          updateTaskStatus(taskText.textContent, false);
+        } else {
+          taskText.style.textDecoration = "line-through";
+          updateTaskStatus(taskText.textContent, true);
+        }
+      };
+  
+      // Save edited text on blur (when clicking outside)
+      taskText.addEventListener("blur", function () {
+        updateTaskText(text, taskText.textContent);
+      });
+  
+      newTask.appendChild(taskText);
+      newTask.appendChild(completeBtn);
+  
+      document.getElementById("display-task").appendChild(newTask);
+    }
+  
+    function updateTaskStatus(taskText, completed) {
+      tasks = tasks.map(task =>
+        task.text === taskText ? { ...task, completed } : task
+      );
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+  
+    function updateTaskText(oldText, newText) {
+      tasks = tasks.map(task =>
+        task.text === oldText ? { ...task, text: newText } : task
+      );
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+  
+    // Handle Enter key
+    document.querySelector(".input").addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        Done();
+      }
+    });
+
+    function clearAllTasks() {
+  const taskContainer = document.getElementById("display-task");
+  taskContainer.innerHTML = ""; // Clear all task elements
+}
+
+  </script>
+  
+        
+    
+    
+  </script>
+
+
+
+</script>
+</body>
+</html>

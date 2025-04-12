@@ -1,0 +1,97 @@
+.container {
+  width: 70%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+ background-color: rgb(166, 74, 86);;
+ width: 100%;
+
+}
+
+.dice {
+  text-align: center;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: rgb(166, 74, 86);
+
+}
+
+
+body {
+  background-color: rgb(166, 74, 86);
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+  text-shadow: 5px 0 #232931;
+  font-size: 5rem;
+  color: rgb(229, 229, 229);
+  background-color: rgb(166, 74, 86);
+  text-align: center;
+  width: 100%;
+}
+
+p {
+  font-size: 2rem;
+  color:rgb(229, 229, 229);
+  font-family: 'Indie Flower', cursive;
+}
+
+
+
+footer {
+  margin-top: 5%;
+  color: #EEEEEE;
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+
+}
+
+img{
+  width: 100;
+}
+
+.button{
+  text-align: center;
+  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 6px rgba(61, 28, 28, 0.2);
+  background-color: rgb(255, 255, 255);
+  color: rgb(166, 74, 86);
+
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 2.7rem; 
+    width: 100%;
+    align-items: center;
+  }
+
+  .container {
+    width: 70%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dice {
+    text-align: center;
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  
+  }
+
+  p {
+    font-size: 1.5rem;
+    color:rgb(229, 229, 229);
+    font-family: 'Indie Flower', cursive;
+  }
+  
+}

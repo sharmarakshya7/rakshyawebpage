@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakshya</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+    
+    .background{
+      margin: 0;
+    }
+   /* Container for carousel */
+   .carousel {
+    width: 90%;
+    max-width: 1300px;
+    margin: 60px auto;
+    position: relative;
+  }
+
+  /* Core Swiper structure */
+  .swiper {
+    width: 100%;
+    height: 100%;
+    
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    transition-timing-function: ease-in-out;
+  }
+
+  .swiper-slide {
+    flex-shrink: 0;
+    width: auto; /* or 100% for one per view */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Image styling */
+  .swiper-slide img {
+    margin: 0;
+    width: 100%;
+    max-width: 70%;
+    height: 50vw;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Navigation button styling */
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #0077cc;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #0077cc;
+  }
+</style>
+
+
+
+   
+</head>
+<body>
+    
+  <header class = "header">  
+    <nav>
+            <div class="nav-container">
+                <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                 <a href="./index.html" class="logo"> <img src="../images/logo.png"  height="60"> </a>
+                </div>
+            <div class="links">
+                    <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="../index.html">Home</a></div>
+                    <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="../about/index.html">About</a></div>
+                    <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="../Background1/index.html">Background</a></div>
+                    <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="../research/index.html">Research</a></div>
+                    <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="../Projects/index.html">Projects</a></div>
+                    <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="../Contact me/index.html">Contact Me</a></div>
+            </div>
+                <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+            </div>
+            <div class="dropdown">
+                <div class="links">
+                    <a href="../index.html">Home</a>
+                    <a href="../about/index.html">About</a>
+                    <a href="../Background1/index.html">Background</a>
+                    <a href="../research/index.html">Research</a>
+                    <a href="../Projects/index.html">Projects</a>
+                    <a href="../Contact me/index.html">Contact Us</a>
+                    <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+                </div>
+            </div>
+</nav>
+</header>
+
+    
+<div class="background">
+    <div class="Background-heading">
+      <h1>Background</h1>
+    </div>
+  
+    <div class="background-cards" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="700">
+      
+      <!-- Card 1 -->
+      <div class="back">
+        <div class="backimg"><img src="../images/bird.png"></div>
+        <div class="uni"><h2>Washington University</h2></div>
+        <div class="unilist">
+          <p>Master’s of Science in Information Technology<br>(2023–2025)</p>
+        </div>
+      </div>
+  
+      <!-- Card 2 -->
+      <div class="back">
+        <div class="backimg"><img src="../images/pillar.png"></div>
+        <div class="uni"><h2>Pokhara University</h2></div>
+        <div class="unilist">
+          <p>Bachelor’s of Public Health<br>(2015–2019)</p>
+        </div>
+      </div>
+  
+      <!-- Card 3 -->
+      <div class="back">
+        <div class="backimg"><img src="../images/setting.png"></div>
+        <div class="uni"><h2>Work Experience</h2></div>
+        <div class="unilist">
+          <p>Washington University<br>World Health Organization <br>SOS Children's Village<br>NAPN <br></p>
+        </div>
+      </div>
+  
+    </div>
+
+
+    <div class="swiper mySwiper carousel" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="900">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="../images/WHO 2.jpg" alt="WHO 2" /></div>
+        <div class="swiper-slide"><img src="../images/1688025645326.jpeg" alt="WHO 2" /></div>
+        <div class="swiper-slide"><img src="../images/who 1.jpg" alt="WHO 1" /></div>
+        <div class="swiper-slide"><img src="../images/wust 2.jpg" alt="WUST 2" /></div>
+        <div class="swiper-slide"><img src="../images/wust 3.jpg" alt="WUST 3" /></div>
+        <div class="swiper-slide"><img src="../images/wust 4.jpg" alt="WUST 4" /></div>
+        <div class="swiper-slide"><img src="../images/FPAN 2.png" alt="FPAN 2" /></div>
+        <div class="swiper-slide"><img src="../images/FPAN.jpeg" alt="FPAN" /></div>
+        <div class="swiper-slide"><img src="../images/NAPN 1.jpg" alt="NAPN 1" /></div>
+        <div class="swiper-slide"><img src="../images/WUST.png" alt="NAPN 2" /></div>
+        <div class="swiper-slide"><img src="../images/WUST.jpg" alt="WUST" /></div>
+        <div class="swiper-slide"><img src="../images/Quiz FPAN.png" alt="Quiz" /></div>
+        <div class="swiper-slide"><img src="../images/WHO 5.jpg" alt="Quiz" /></div>
+      </div>
+    
+      <!-- Navigation buttons -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    
+  </div>
+
+
+  <!-- Scripts -->
+ <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+  var swiper = new Swiper(".mySwiper", {
+    loop: true, // Enables infinite scrolling
+    autoplay: {
+      delay: 3000, // Time between slides (ms)
+      disableOnInteraction: false, // Keeps autoplay even after interactions
+    },
+    speed: 1000, // Slide transition speed (ms)
+    slidesPerView: 1, // Adjust based on your layout
+    spaceBetween: 10, // Space between slides
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
+  </script>
+</body>
+</html>
