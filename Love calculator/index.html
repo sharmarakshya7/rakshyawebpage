@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Score Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffcccb;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #ff5e78;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff3b60;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #d6336c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Love Score Calculator </h2>
+        <p> Made by Rakshya</p>
+        <input type="text" id="name1" placeholder="Enter your name">
+        <input type="text" id="name2" placeholder="Enter partner's name">
+        <br>
+        <button onclick="calculateLoveScore()" id = "calculate">Calculate Love</button>
+        <p id="result"></p>
+    </div>
+    
+    <script>
+        function calculateLoveScore() {
+            let name1 = document.getElementById('name1').value;
+            let name2 = document.getElementById('name2').value;
+            
+            if (name1 === "" || name2 === "") {
+                document.getElementById('result').innerText = "Please enter both names!";
+                return;
+            }
+            
+            let loveScore = Math.floor(Math.random() * 100) + 1;
+            document.getElementById('result').innerText = `${name1} ❤️ ${name2}: ${loveScore}% Compatibility!`;
+        }
+
+
+document.getElementById("name1").addEventListener("keydown", function(event){
+    if (event.key === "Enter"){
+        document.getElementById("name2").focus();
+    }
+});
+
+
+
+      document.getElementById("name2").addEventListener("keydown", function(event){
+if (event.key === "Enter") {
+document.getElementById("calculate").click();
+      }
+      }  
+    );
+    </script>
+</body>
+</html>

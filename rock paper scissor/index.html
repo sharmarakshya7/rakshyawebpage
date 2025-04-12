@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster">
+      <style>
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+      
+        body {
+          background-color: rgb(166, 74, 86);
+          font-family: 'Indie Flower', cursive;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+      
+        .container {
+          padding: 2vw;
+          margin-top: 10vw;
+
+        }
+      
+        h1 {
+          font-family: 'Lobster', cursive;
+          text-shadow: 0.5vw 0 #232931;
+          font-size: 5vw;
+          color: rgb(229, 229, 229);
+          margin-bottom: 2vw;
+        }
+      
+        .dice {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          gap: 4vw;
+          margin-bottom: 4vw;
+          width: 100%;
+        }
+      
+        .dice1, .dice2 {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      
+        p {
+          font-size: 2.5vw;
+          color: rgb(229, 229, 229);
+          margin-bottom: 1vw;
+        }
+      
+        img {
+          width: 40vw;
+          height: auto;
+          border-radius: 1vw;
+        }
+      
+        .button {
+          font-size: 1.5vw;
+          padding: 1.2vw 2.4vw;
+          border-radius: 1vw;
+          cursor: pointer;
+          box-shadow: 0 0.6vw 0.6vw rgba(61, 28, 28, 0.2);
+          background-color: rgb(15, 4, 78);
+          color: white;
+          border: none;
+          transition: background-color 0.3s ease;
+        }
+      
+        .button:hover {
+          background-color: rgb(31, 14, 121);
+        }
+      
+        footer {
+          margin-top: 5vh;
+          color: #EEEEEE;
+          text-align: center;
+          font-size: 2vw;
+        }
+      
+        @media (max-width: 600px) {
+          h1 {
+            font-size: 6vw;
+          }
+      
+          p {
+            font-size: 4vw;
+          }
+      
+          img {
+            width: 42vw;
+          }
+      
+          .button {
+            width: 60vw;
+            font-size: 3vw;
+          }
+        }
+    
+      </style>
+      
+   
+  </head>
+  
+  <body>
+    <div class="container">
+      <h1>Rock Paper Scissor</h1>
+      
+
+      <div class="dice">
+        <div class=" dice1">
+        <p>Player 1</p>
+        <img class="img1" src="./S1.png" width="400" height="250" />
+       </div>
+  
+       <div class="dice2">
+        <p>Player 2</p>
+        <img class="img2" src="./S2.png " width="400" height="250"/>
+            </div>
+          </div>
+   <button class="button" onclick="reload()" >Play</button>
+<script>
+var randomNumber1 = Math.floor(Math.random()*3)+1;
+var randomNumber2 = Math.floor(Math.random()*3)+1;
+var randomimage1 = document.querySelector(".img1").setAttribute(src, ".S"+randomNumber1+".png");
+var randomimage2 = document.querySelector(".img1").setAttribute(src, ".S"+randomNumber2+".png");
+
+function output(){
+  
+}
+
+
+
+
+
+
+
+</script>
+<script src="index.js" charset="utf-8"> </script>
+ </body>
+    <footer>Designed By Rakshya</footer>
+ 
+</html>

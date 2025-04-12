@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakshya</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+
+
+        .flex-container {
+  display: flex;
+  align-items: center;
+ 
+  margin-bottom:2rem;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.about-img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+}
+
+ h2 {
+    font-size: clamp(1.5rem, 4vw, 4.5rem);
+    text-align:center;
+    color:rgb(155,72,25);
+    position:relative; 
+    margin-top:  4rem;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-style: italic;
+  }
+
+.paragraph {
+  max-width: 600px;
+}
+
+nav {
+  background-color: transparent rgba(165, 107, 42, 0.8); 
+  /* Light brown with transparency */
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-img {
+    width: 150px;
+    margin: 0 auto;
+  }
+
+  .paragraph {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+ 
+}
+
+    </style>
+</head>
+<body>
+  <header class = "header">  
+    <nav>
+            <div class="nav-container">
+                <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                 <a href="./index.html" class="logo"> <img src="../images/logo.png"  height="60"> </a>
+                </div>
+            <div class="links">
+                    <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="../index.html">Home</a></div>
+                    <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="../about/index.html">About</a></div>
+                    <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="../Background1/index.html">Background</a></div>
+                    <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="../research/index.html">Research</a></div>
+                    <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="../Projects/index.html">Projects</a></div>
+                    <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="../Contact me/index.html">Contact Me</a></div>
+            </div>
+                <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+            </div>
+            <div class="dropdown">
+                <div class="links">
+                    <a href="../index.html">Home</a>
+                    <a href="../about/index.html">About</a>
+                    <a href="../Background1/index.html">Background</a>
+                    <a href="../research/index.html">Research</a>
+                    <a href="../Projects/index.html">Projects</a>
+                    <a href="../Contact me/index.html">Contact Us</a>
+                    <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+                </div>
+            </div>
+</nav>
+</header>
+
+
+ <h2>About Rakshya Sharma</h2>
+<section class="About">
+   
+    <div class="intro">
+   
+      <!-- First part with image on the left -->
+      <div class="about-part flex-container">
+        <img  src="../images/resized.jpg" class="about-img" data-aos="fade-right" data-aos-duration="1500" alt="Rakshya Image Left">
+        <div class="paragraph">
+         
+          <p>Motivated, collaborative, and responsible IT professional with experience in full-stack development, data analysis, and information management. I hold a Master of Science degree in Information Technology and a Bachelor's degree in Public Health. With over four years of hands-on experience, my work has focused on designing and implementing statistical and epidemiological techniques to provide data-driven, evidence-based solutions.</p>
+        </div>
+      </div>
+  
+      <!-- Second part with image on the right -->
+      <div class="about-part flex-container reverse">
+        <img src="../images/Screenshot 2025-04-04 200951.png" class="about-img" data-aos="fade-left" data-aos-duration="1500" alt="Rakshya Image Right">
+        <div class="paragraph">
+          <p>In addition to my technical expertise, I’m also passionate about brand design, illustration, and print media. I aim to make a lasting impact in digital media and tech spaces through thoughtful, creative, and user-centered design. I thrive in collaborative environments and look forward to working with individuals and organizations that value innovation, functionality, and visual storytelling. Let’s connect and create something meaningful together.</p>
+        </div>
+        
+      </div>
+  
+    </div>
+  </section>
+  
+
+    <div class="reach"> 
+        <div class="S2">
+          <div class="saying">
+            <p> Reach out if you want to create impactful visual art together </p>
+            <hr> 
+          </div>
+          <div class="socials">
+            <p> To see more of my work, visit my Socials</p> 
+    
+            <div class="social-links2" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="500">
+              <a href="https://www.instagram.com/rakshya.sharma7/" ><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.instagram.com/rakshya.sharma7/"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/rakshya-sharma/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://x.com/RakshyaSharma8"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+          <div class="Contact"> 
+            <p> Phone: +9198xxxxxxxx </p>
+            <p></p> Email: sharmarakshya7@gmail.com</p> 
+          </div>
+        </div>
+      </div>
+      <div id="contactModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeContactModal()">&times;</span>
+          <h2>Contact Me</h2>
+          <form onsubmit="sendEmail(event)">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+      </div>
+
+      <footer class="footer">
+        &copy; 2025 Rakshya Sharma | Portfolio
+      </footer>
+      
+    
+    
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({ offset: 0 });
+    </script>
+    
+    <script src="../script.js"></script>
+    
+    </body>
+    </html>
+    
+    
+    </body>
+    </html>
